@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jvm-cgroups-games
+  name: jvm-cgroups-games
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jvm-cgroups-games
+  template:
+    metadata:
+      labels:
+        app: jvm-cgroups-games
+    spec:
+      containers:
+      - name: jvm-cgroups-games
+        image: localhost:5000/jvm-cgroups-games:0.1.0
+          #resources:
+          #  requests:
+          #    cpu: "1000m"
